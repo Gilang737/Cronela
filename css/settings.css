@@ -1,0 +1,299 @@
+/* Base Styles & Variables */
+:root {
+    --primary-color: #4361ee;
+    --primary-hover: #3a56d4;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --success-color: #4caf50;
+    --success-hover: #45a049;
+    --back-color: #2196F3;
+    --back-hover: #0b7dda;
+    --text-primary: #333;
+    --text-secondary: #555;
+    --bg-light: #f8f9fa;
+    --bg-card: #ffffff;
+    --border-radius: 12px;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background-color: #f0f2f5;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Container Styling */
+.container {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.logo img {
+    max-width: 150px;
+    transition: var(--transition);
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Profile Info Styling */
+.profile-info {
+    margin-bottom: 40px;
+}
+
+.profile-info div {
+    margin-bottom: 25px;
+    padding: 22px;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-color);
+}
+
+.profile-info div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    font-size: 1.05em;
+}
+
+.value {
+    color: var(--text-secondary);
+    padding: 8px 0;
+    font-size: 1.1em;
+    position: relative;
+    padding-left: 10px;
+}
+
+.value::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Form Elements */
+form {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e1e5eb;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: var(--transition);
+    background-color: var(--bg-light);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+/* Button Styling */
+.buttons {
+    text-align: center;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button, .buttons a {
+    padding: 14px 28px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.2);
+}
+
+button::before, .buttons a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: var(--transition);
+}
+
+button:hover::before, .buttons a:hover::before {
+    left: 100%;
+}
+
+button:hover, .buttons a:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(67, 97, 238, 0.3);
+}
+
+button:active, .buttons a:active {
+    transform: translateY(0);
+}
+
+button[type="submit"] {
+    background-color: var(--success-color);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--success-hover);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+}
+
+.back-button {
+    background-color: var(--back-color) !important;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.2) !important;
+}
+
+.back-button:hover {
+    background-color: var(--back-hover) !important;
+    box-shadow: 0 8px 25px rgba(33, 150, 243, 0.3) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    button, .buttons a {
+        width: 100%;
+    }
+    
+    .profile-info div {
+        padding: 15px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.profile-info div:nth-child(1) { animation: fadeIn 0.5s ease-out 0.1s both; }
+.profile-info div:nth-child(2) { animation: fadeIn 0.5s ease-out 0.2s both; }
+.profile-info div:nth-child(3) { animation: fadeIn 0.5s ease-out 0.3s both; }
+.profile-info div:nth-child(4) { animation: fadeIn 0.5s ease-out 0.4s both; }
+.profile-info div:nth-child(5) { animation: fadeIn 0.5s ease-out 0.5s both; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}

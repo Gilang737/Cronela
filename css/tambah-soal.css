@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Tambahkan agar konten diatur dalam kolom */
+    align-items: center;
+    justify-content: center; /* Tambahkan ini agar form ada di tengah secara horizontal */
+    background: white;
+    max-width: 400px; /* Sesuaikan ukuran jika perlu */
+    width: 100%;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
